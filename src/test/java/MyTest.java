@@ -1,16 +1,14 @@
+import io.github.artsok.RepeatedIfExceptionsTest;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import config.Config;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class MyTest {
-    @Test
-    public void firstTest() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get(Config.baseUrl);
+    @ParameterizedTest
+    @CsvSource({"2,2,", "3,3,", "4,3"})
+    public void firstTest(Integer actual, Integer expected) {
+        Assertions.assertEquals(expected, actual);
     }
 }

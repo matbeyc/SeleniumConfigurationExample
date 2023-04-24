@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'org.example'
@@ -15,8 +16,15 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.8.3'
     implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
     implementation 'com.typesafe:config:1.4.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.9.2'
+    testImplementation group: 'io.qameta.allure', name: 'allure-junit5', version: '2.21.0'
+    implementation group: 'io.qameta.allure', name: 'allure-java-commons', version: '2.21.0'
+    testImplementation group: 'io.github.artsok', name: 'rerunner-jupiter', version: '2.1.6'
+    testImplementation group: 'org.junit-pioneer', name: 'junit-pioneer', version: '2.0.1'
+
 
 }
+
 
 
 test {
